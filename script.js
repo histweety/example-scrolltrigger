@@ -58,3 +58,24 @@ gsap.to(reviews, {
     end: () => "+=" + document.querySelector("#review .container").offsetWidth
   }
 });
+
+// COVER SECTION
+const coverEl = document.querySelector('#cover');
+const coverTitle = document.querySelector("#cover .title");
+const coverSubtitle = document.querySelector("#cover .subtitle");
+const coverCaption = document.querySelector("#cover .caption");
+const coverLine = document.querySelector("#cover .line");
+
+coverTitle.classList.add("animate__animated", "animate__fadeInDown", "animate__delay-1s");
+coverSubtitle.classList.add("animate__animated", "animate__fadeInUp", "animate__delay-2s")
+coverSubtitle.addEventListener('animationend', function(event) {
+  event.stopPropagation();
+  coverLine.classList.add("active");
+}, {once: true});
+
+coverCaption.classList.add("animate__animated", "animate__fadeIn", "animate__delay-3s");
+coverCaption.addEventListener('animationend', function(event) {
+  event.stopPropagation();
+  coverCaption.classList.remove("animate__fadeIn", "animate__delay-3s");
+  coverCaption.classList.add("animate__flash", "animate__slower", "animate__infinite");
+}, {once: true});
