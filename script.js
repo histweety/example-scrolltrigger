@@ -79,3 +79,10 @@ coverCaption.addEventListener('animationend', function(event) {
   coverCaption.classList.remove("animate__fadeIn", "animate__delay-3s");
   coverCaption.classList.add("animate__flash", "animate__slower", "animate__infinite");
 }, {once: true});
+
+coverEl.addEventListener('animationend', function(event) {
+  console.log(event.animationName);
+  // if (event.animationName === "fadeOut") {
+  //   coverEl.style.display = "none";
+  // }
+}, { once: true });

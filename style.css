@@ -137,8 +137,18 @@ body {
 }
 
 /* COVER SECTION */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    visibility: visible;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
 #cover {
-  position: absolute;
+  position: fixed;
   z-index: 1500;
   top: 0;
   left: 0;
